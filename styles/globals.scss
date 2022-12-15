@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply font-monserrat;
+    }
+
+    .title {
+        h1,
+        h2 {
+            font-weight: bolder;
+            line-height: 80%;
+            letter-spacing: 0;
+            @apply uppercase;
+        }
+
+        h1 {
+            font-size: 200px;
+        }
+
+        h2 {
+            font-size: 48px;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: bolder;
+            line-height: 100%;
+            letter-spacing: 0;
+            @apply uppercase;
+        }
+
+        @media screen and (max-width: 1024px) {
+            h1 {
+                font-size: 96px;
+            }
+            h2 {
+                font-size: 32px;
+            }
+            h3 {
+                font-size: 24px;
+            }
+        }
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 150%;
+        @apply font-semibold;
+    }
+
+    @media screen and (max-width: 1024px) {
+        p {
+            font-size: 16px;
+        }
+    }
+}
