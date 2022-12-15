@@ -5,13 +5,16 @@ module.exports = {
         "./pages/**/*.{html,tsx}"
     ],
     theme: {
+        screens: {
+            'md': '1024px'
+        },
         extend: {
             colors: {
                 neutral: {
                     0: '#FFFFFF',
                     100: '#F5F9FF',
                     200: '#E6EDF7',
-                    300: '#252F3D',
+                    300: '#DAE4F2',
                     500: '#8FA3BF',
                     600: '#7C899C',
                     900: '#252F3D'
@@ -29,6 +32,9 @@ module.exports = {
                     "light-2": '#CCE1FF',
                 }
             },
+            boxShadow: {
+                "elevation-1": "0px 2px 12px rgba(0, 0, 0, 0.08)"
+            },
             backgroundImage: {
                 brandGradient: 'linear-gradient(102.47deg, #176FEB -5.34%, #FF80FF 106.58%)',
                 brandGradientHover: 'linear-gradient(102.47deg, #1667D9 -5.34%, #F279F2 106.58%)',
@@ -43,11 +49,24 @@ module.exports = {
                 24: '24%',
             },
             height: {
-                hug: '128px'
+                hug: '48px',
+                logo: '24px',
+                logoResponsive: '20px',
             },
             width: {
-                hug: '128px'
-            }
+                hug: '156px',
+                fill: '1464px',
+                logo: '24px',
+                logoResponsive: '20px',
+            },
+            minWidth: {
+                hug: '156px',
+                fill: '1464px'
+            },
+            maxWidth: {
+                hug: '156px',
+                fill: '1464px'
+            },
         },
     },
     plugins: [],
