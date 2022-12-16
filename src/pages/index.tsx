@@ -5,8 +5,7 @@ import { useEffect } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import { useData } from '../context/DataContext';
 import { User } from '../types';
-
-import { getMe } from './../server/User';
+import { getMe } from '../server/Api';
 
 interface HomeProps extends InferGetStaticPropsType<typeof getStaticProps> {
 

@@ -15,3 +15,20 @@ export const getMe = async () => {
 
     return data;
 };
+
+
+export const addPoints = async (points: number) => {
+    const response = await fetch(`${BASE_URL}/user/points`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ amount: points })
+    });
+    const data = await response.json() as {
+        message: string; "new Points": number;
+    };
+
+    return data;
+};
