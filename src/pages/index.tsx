@@ -1,6 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Head from 'next/head';
 import { useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 import Navbar from '../components/Navbar/Navbar';
 import { useData } from '../context/DataContext';
@@ -35,7 +36,32 @@ const Home: NextPage<HomeProps> = ({myInfo}) => {
             <main className={'bg-brandGradient w-full h-screen flex justify-center'}>
                 <Navbar />
             </main>
-
+            <Toaster
+                position='bottom-left'
+                reverseOrder={true}
+                toastOptions={{
+                    style: {
+                        width: '100%',
+                        maxWidth: '532px',
+                    },
+                    success: {
+                        style: {
+                            background: '#F7FAFC',
+                            color: '#7C899C',
+                            border: '2px solid #29CC74',
+                            borderRadius: '10px',
+                        },
+                    },
+                    error: {
+                        style: {
+                            background: '#F7FAFC',
+                            color: '#7C899C',
+                            border: '2px solid #F56565',
+                            borderRadius: '10px',
+                        },
+                    },
+                }}
+            />
         </>
     );
 };

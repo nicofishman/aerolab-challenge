@@ -2,12 +2,14 @@ import React, { FC, useState } from 'react';
 import { RadioGroup as HeadlessRadioGroup } from '@headlessui/react';
 import classNames from 'classnames';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 import { addPoints } from '../../server/Api';
 import { useData } from '../../context/DataContext';
 
 import { BrandButton } from './BrandButton';
 import { getMe } from './../../server/Api';
+import ToastNotification from './ToastNotification';
 
 interface RadioGroupProps {
     buttons: string[];
@@ -19,11 +21,14 @@ const RadioGroup: FC<RadioGroupProps> = ({buttons, label}) => {
     
     const addPointsToWallet = async (value: number) => {
         const res = await addPoints(value);
-
+        
         if (res) {
             const myNewInfo = await getMe();
-
+            
             setMyInfo(myNewInfo);
+            toast.success((t) => <ToastNotification message={<span>Se agregaron <b>{value.toLocaleString()}</b> puntos a tu billetera</span>} type={t.type} />);
+        } else {
+            toast.error((t) => <ToastNotification message='Ocurrió un error al agregar puntos a tu billetera' type={t.type} />);
         }
     };
 
