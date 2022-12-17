@@ -6,7 +6,7 @@ module.exports = {
     ],
     theme: {
         screens: {
-            'md': '1024px'
+            'md': '1025px'
         },
         extend: {
             colors: {
@@ -37,6 +37,7 @@ module.exports = {
             },
             backgroundImage: {
                 brandGradient: 'linear-gradient(102.47deg, #176FEB -5.34%, #FF80FF 106.58%)',
+                'brandGradient/50': 'linear-gradient(102.47deg, rgba(23, 111, 235, 0.5) -5.34%, rgba(255, 128, 255, 0.5) 106.58%);',
                 brandGradientHover: 'linear-gradient(102.47deg, #1667D9 -5.34%, #F279F2 106.58%)',
                 illustration: 'linear-gradient(102.47deg, #7296EB -5.34%, #EAC0E9 106.58%, #EAC0E9 106.58%)',
                 section: 'linear-gradient(102.47deg, rgba(23, 111, 235, 0.5) -5.34%, rgba(255, 128, 255, 0.5) 106.58%)',
@@ -46,7 +47,7 @@ module.exports = {
                 monserrat: ['Montserrat', 'sans-serif'],
             },
             letterSpacing: {
-                24: '24%',
+                24: '0.24em',
             },
             height: {
                 hug: '48px',

@@ -5,19 +5,21 @@ import { Toaster } from 'react-hot-toast';
 
 import Navbar from '../components/Navbar/Navbar';
 import { useData } from '../context/DataContext';
-import { User } from '../types';
-import { getMe } from '../server/Api';
+import { Product, User } from '../types';
+import { getMe, getProducts } from '../server/Api';
+import MainBanner from '../components/MainBanner/MainBanner';
 
 interface HomeProps extends InferGetStaticPropsType<typeof getStaticProps> {
 
 }
 
-const Home: NextPage<HomeProps> = ({myInfo}) => {
-    const { setMyInfo } = useData();
+const Home: NextPage<HomeProps> = ({ myInfo, products }) => {
+    const { setMyInfo, setProducts } = useData();
 
     useEffect(() => {
         setMyInfo(myInfo);
-    }, [myInfo, setMyInfo]);
+        setProducts(products);
+    }, [myInfo, products, setMyInfo, setProducts]);
 
     return (
         <>
@@ -33,8 +35,9 @@ const Home: NextPage<HomeProps> = ({myInfo}) => {
                 />
                 <link href="/favicon.ico" rel="icon" />
             </Head>
-            <main className={'bg-brandGradient w-full h-screen flex justify-center'}>
+            <main className={'bg-white w-full h-screen'}>
                 <Navbar />
+                <MainBanner />
             </main>
             <Toaster
                 position='bottom-left'
@@ -68,12 +71,14 @@ const Home: NextPage<HomeProps> = ({myInfo}) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<{myInfo: User}> = async () => {
-    const myInfo = await getMe();    
+export const getStaticProps: GetStaticProps<{myInfo: User, products: Product[]}> = async () => {
+    const myInfo = await getMe();
+    const products = await getProducts();
 
     return {
         props: {
             myInfo,
+            products,
         },
     };
 };

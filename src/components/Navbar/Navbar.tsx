@@ -22,5 +22,5 @@ const Navbar: FC<NabvarProps> = () => {
 export default Navbar;
 
 const Nav = tw.nav`
-w-full max-w-fill h-hug flex items-center justify-between bg-white py-10 px-2
+w-full max-w-fill h-hug flex items-center justify-between bg-white py-10 px-2 mx-auto z-30 relative
 `;

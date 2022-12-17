@@ -1,23 +1,28 @@
 import React, { createContext, FC, PropsWithChildren, useContext, useMemo, useState } from 'react';
 
-import { User } from '../types';
+import { Product, User } from '../types';
 
 export interface DataContextType {
     myInfo: User;
     setMyInfo: React.Dispatch<React.SetStateAction<User>>;
+    products: Product[];
+    setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
 }
 
 export const DataContext = createContext<DataContextType | undefined>(undefined);
 
 const DataProvider: FC<PropsWithChildren> = ({ children }) => {
     const [myInfo, setMyInfo] = useState<User>({} as User);
+    const [products, setProducts] = useState<Product[]>([]);
 
     const value: DataContextType = useMemo(() => {
         return {
             myInfo,
+            products,
             setMyInfo,
+            setProducts,
         };
-    }, [myInfo]);
+    }, [myInfo, products]);
 
     return (
         <DataContext.Provider value={value}>

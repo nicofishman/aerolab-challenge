@@ -6,3 +6,15 @@ export type User = {
     redeemHistory: any[];
     __v: number;
 }
+export type Product = {
+    _id: string;
+    name: string;
+    cost: number;
+    category: string;
+    img: Img;
+}
+
+export type Img = {
+    url: string;
+    hdUrl: string;
+}
