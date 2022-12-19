@@ -5,10 +5,10 @@ module.exports = {
         "./pages/**/*.{html,tsx}"
     ],
     theme: {
-        screens: {
-            'md': '1025px'
-        },
         extend: {
+            screens: {
+                'md': '1025px'
+            },
             colors: {
                 neutral: {
                     0: '#FFFFFF',

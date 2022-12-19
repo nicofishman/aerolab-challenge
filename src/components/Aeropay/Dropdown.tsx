@@ -21,11 +21,11 @@ const Dropdown: FC<DropdownProps> = ({className}) => {
             {({ open }) => (
                 <Chip className={className || ''}>
                     <div className="gap-2 flex items-center">
-                        <Image alt='kite' className='md:w-logo md:h-logo h-logoResponsive w-logoResponsive' height={24} src={'/img/icons/Icons.png'} width={24}/>
+                        <Image alt='kite' className='logo' height={24} src={'/img/icons/Icons.png'} width={24}/>
                         <h3 className='text-l1 bg-clip-text bg-brandGradient text-transparent'>{myInfo.points && myInfo.points.toLocaleString()}</h3>
                     </div>
                     <Popover.Button className={'outline-none'}>
-                        <Image alt='chevronDown' className={classNames('md:w-logo md:h-logo h-logoResponsive w-logoResponsive rotate-90 transition-transform outline-none duration-300', open && '-rotate-90')} height={24} src={'/img/icons/Icons-5.png'} width={24}/>
+                        <Image alt='chevronDown' className={classNames('logo rotate-90 transition-transform outline-none duration-300', open && '-rotate-90')} height={24} src={'/img/icons/Icons-5.png'} width={24}/>
                     </Popover.Button>
                     <Transition
                         as={Fragment}

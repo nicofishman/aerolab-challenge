@@ -64,4 +64,12 @@
     .text-l2 {
         @apply font-semibold md:text-sm leading-[150%] text-[12px];
     }
+
+    .logo {
+        @apply w-logoResponsive h-logoResponsive md:h-logo md:w-logo;
+    }
+
+    .logo-walkthrough {
+        @apply w-[26px] h-[26px] md:w-8 md:h-8;
+    }
 }

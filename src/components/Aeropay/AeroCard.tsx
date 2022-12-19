@@ -16,7 +16,7 @@ const AeroCard: FC<AeroCardProps> = () => {
             <div className='flex flex-col justify-between h-full z-10'>
                 <div className='flex flex-row justify-between items-center'>
                     <span className='text-l1'>Aerocard</span>
-                    <Image alt='kiteLogo' className='md:w-logo md:h-logo h-logoResponsive w-logoResponsive' height={24} src={'/img/icons/Icons-11.png'} width={24} />
+                    <Image alt='kiteLogo' className='logo' height={24} src={'/img/icons/Icons-11.png'} width={24} />
                 </div>
                 <div className='flex flex-row justify-between'>
                     <span className='text-l2'>{myInfo.name}</span>

@@ -1,4 +1,4 @@
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
@@ -8,8 +8,9 @@ import { useData } from '../context/DataContext';
 import { Product, User } from '../types';
 import { getMe, getProducts } from '../server/Api';
 import MainBanner from '../components/MainBanner/MainBanner';
+import Walkthrough from '../components/Walkthrough/Walkthrough';
 
-interface HomeProps extends InferGetStaticPropsType<typeof getStaticProps> {
+interface HomeProps extends InferGetServerSidePropsType<typeof getServerSideProps> {
 
 }
 
@@ -38,6 +39,7 @@ const Home: NextPage<HomeProps> = ({ myInfo, products }) => {
             <main className={'bg-white w-full h-screen'}>
                 <Navbar />
                 <MainBanner />
+                <Walkthrough />
             </main>
             <Toaster
                 position='bottom-left'
@@ -71,7 +73,7 @@ const Home: NextPage<HomeProps> = ({ myInfo, products }) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<{myInfo: User, products: Product[]}> = async () => {
+export const getServerSideProps: GetServerSideProps<{myInfo: User, products: Product[]}> = async () => {
     const myInfo = await getMe();
     const products = await getProducts();
 

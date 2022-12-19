@@ -65,7 +65,7 @@ const RadioGroup: FC<RadioGroupProps> = ({buttons, label}) => {
                 </div>
             </HeadlessRadioGroup>
             <BrandButton className='flex gap-2 justify-center mt-6' onClick={() => addPointsToWallet(Number(selected))}>
-                <Image alt='kiteLogo' className='md:w-logo md:h-logo h-logoResponsive w-logoResponsive' height={24} src={'/img/icons/Icons-10.png'} width={24}/>
+                <Image alt='kiteLogo' className='logo' height={24} src={'/img/icons/Icons-10.png'} width={24}/>
                 <span className='text-l1 font-medium'>Add Points</span>
             </BrandButton>
         </div>
