@@ -29,5 +29,5 @@ const Card: FC<CardProps> = ({description,icon,image,title}) => {
 export default Card;
 
 const OuterBorder = tw.div`
-    bg-white/70 rounded-3xl p-3 w-full h-full border-[1px] border-neutral-300 z-20 flex flex-col
+    bg-white/70 rounded-[32px] p-3 w-full h-full border-[1px] border-neutral-300 z-20 flex flex-col shadow-md
 `;
