@@ -20,7 +20,7 @@ const Dropdown: FC<DropdownProps> = ({className}) => {
         <Popover as="div" className="relative">
             {({ open }) => (
                 <Chip className={className || ''}>
-                    <div className="gap-2 flex items-center">
+                    <div className="gap-2 flex-1 flex items-center justify-between">
                         <Image alt='kite' className='logo' height={24} src={'/img/icons/Icons.png'} width={24}/>
                         <h3 className='text-l1 bg-clip-text bg-brandGradient text-transparent'>{myInfo.points && myInfo.points.toLocaleString()}</h3>
                     </div>
@@ -49,5 +49,5 @@ const Dropdown: FC<DropdownProps> = ({className}) => {
 export default Dropdown;
 
 const Chip = tw.div`
-w-hug h-hug bg-white border-[1px] border-neutral-300 rounded-full flex items-center justify-between drop-shadow-md py-2 px-4 gap-5 relative
+w-hug h-hug bg-white border-[1px] border-neutral-300 rounded-full flex items-center justify-between drop-shadow-md py-2 px-4 gap-2 relative
 `;
