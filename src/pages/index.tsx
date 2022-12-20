@@ -10,6 +10,7 @@ import { getMe, getProducts } from '../server/Api';
 import MainBanner from '../components/MainBanner/MainBanner';
 import Walkthrough from '../components/Walkthrough/Walkthrough';
 import Products from '../components/Products/Products';
+import Footer from '../components/Footer/Footer';
 
 interface HomeProps extends InferGetServerSidePropsType<typeof getServerSideProps> {
 
@@ -42,6 +43,7 @@ const Home: NextPage<HomeProps> = ({ myInfo, products }) => {
                 <MainBanner />
                 <Walkthrough />
                 <Products />
+                <Footer />
             </main>
             <Toaster
                 position='bottom-left'

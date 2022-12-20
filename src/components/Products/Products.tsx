@@ -31,5 +31,5 @@ const Products: FC<ProductsProps> = () => {
 export default Products;
 
 const Container = tw.div`
-w-full max-w-fill h-hug bg-white mx-auto mt-56 px-5 relative
+w-full max-w-fill bg-white mx-auto mt-56 px-5
 `;
