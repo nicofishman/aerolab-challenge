@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Image from 'next/image';
 import React, { FC } from 'react';
 
 interface ResponsiveImageProps {
@@ -12,7 +13,7 @@ const ResponsiveImage: FC<ResponsiveImageProps> = ({ alt, desktopSrc, mobileSrc,
     return (
         <picture>
             <source media={'(max-width: 1024px)'} srcSet={mobileSrc} />
-            <img alt={alt} className={classNames('w-full h-auto', className)} src={desktopSrc} />
+            <Image alt={alt} className={classNames('w-full h-auto', className)} height={1000} src={desktopSrc} width={1000} />
         </picture>
     );
 };

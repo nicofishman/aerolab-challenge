@@ -13,7 +13,7 @@ interface ProductsProps {
 
 const Products: FC<ProductsProps> = () => {
     return (
-        <Container>
+        <Container id='products'>
             <Title />
             <div className="flex w-full md:divide-x-[2px] divide-x-0 divide-neutral-300 mt-10 flex-col md:flex-row">
                 <Filter />
