@@ -9,6 +9,7 @@ import { Product, User } from '../types';
 import { getMe, getProducts } from '../server/Api';
 import MainBanner from '../components/MainBanner/MainBanner';
 import Walkthrough from '../components/Walkthrough/Walkthrough';
+import Products from '../components/Products/Products';
 
 interface HomeProps extends InferGetServerSidePropsType<typeof getServerSideProps> {
 
@@ -40,6 +41,7 @@ const Home: NextPage<HomeProps> = ({ myInfo, products }) => {
                 <Navbar />
                 <MainBanner />
                 <Walkthrough />
+                <Products />
             </main>
             <Toaster
                 position='bottom-left'
@@ -75,7 +77,7 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps<{myInfo: User, products: Product[]}> = async () => {
     const myInfo = await getMe();
-    const products = await getProducts();
+    const products = await getProducts();    
 
     return {
         props: {

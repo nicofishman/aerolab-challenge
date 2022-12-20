@@ -35,5 +35,5 @@ const ToastNotification: FC<ToastNotificationProps> = ({ message, type }) => {
 export default ToastNotification;
 
 const ToastDiv = tw.div`
-    max-w-[532px] w-full h-20 flex items-center justify-between py-7 pr-4
+    max-w-[532px] w-full h-8 flex items-center justify-between pr-4
 `;

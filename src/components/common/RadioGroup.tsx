@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { addPoints } from '../../server/Api';
 import { useData } from '../../context/DataContext';
 
-import { BrandButton } from './BrandButton';
+import BrandButton  from './BrandButton';
 import { getMe } from './../../server/Api';
 import ToastNotification from './ToastNotification';
 

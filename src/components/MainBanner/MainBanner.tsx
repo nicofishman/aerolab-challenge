@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FC } from 'react';
 
-import { BrandButton } from '../common/BrandButton';
+import BrandButton from '../common/BrandButton';
 
 import HeroImage from './HeroImage';
 
