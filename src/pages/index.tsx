@@ -87,11 +87,6 @@ export const getServerSideProps: GetServerSideProps<{
     const myInfo = await getMe();
     const products = await getProducts();
 
-    console.log({
-        apiKey: process.env.NEXT_PUBLIC_API_KEY,
-        baseURL: process.env.NEXT_PUBLIC_BASE_URL,
-    });
-
     return {
         props: {
             myInfo,
