@@ -1,4 +1,8 @@
-import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next';
+import {
+    GetServerSideProps,
+    InferGetServerSidePropsType,
+    NextPage,
+} from 'next';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
@@ -12,9 +16,8 @@ import Walkthrough from '../components/Walkthrough/Walkthrough';
 import Products from '../components/Products/Products';
 import Footer from '../components/Footer/Footer';
 
-interface HomeProps extends InferGetServerSidePropsType<typeof getServerSideProps> {
-
-}
+interface HomeProps
+    extends InferGetServerSidePropsType<typeof getServerSideProps> {}
 
 const Home: NextPage<HomeProps> = ({ myInfo, products }) => {
     const { setMyInfo, setProducts } = useData();
@@ -46,7 +49,7 @@ const Home: NextPage<HomeProps> = ({ myInfo, products }) => {
                 <Footer />
             </main>
             <Toaster
-                position='bottom-left'
+                position="bottom-left"
                 reverseOrder={true}
                 toastOptions={{
                     style: {
@@ -77,9 +80,17 @@ const Home: NextPage<HomeProps> = ({ myInfo, products }) => {
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps<{myInfo: User, products: Product[]}> = async () => {
+export const getServerSideProps: GetServerSideProps<{
+    myInfo: User;
+    products: Product[];
+}> = async () => {
     const myInfo = await getMe();
-    const products = await getProducts();    
+    const products = await getProducts();
+
+    console.log({
+        apiKey: process.env.NEXT_PUBLIC_API_KEY,
+        baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+    });
 
     return {
         props: {
